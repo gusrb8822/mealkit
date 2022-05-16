@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="org.phg.dao.OrderDAO">
+    	<select id="getAddElement1" resultType="org.phg.model.AddElementDTO">
+    		SELECT * FROM mealkit.add_element_table
+    		WHERE element_group = "meat" or element_group = "seafood"
+    	</select>
+    	
+    	<select id="getAddElement2" resultType="org.phg.model.AddElementDTO">
+    		SELECT * FROM mealkit.add_element_table
+    		WHERE element_group = "vegetable"
+    	</select>
+    	
+    	<select id="getAddElement3" resultType="org.phg.model.AddElementDTO">
+    		SELECT * FROM mealkit.add_element_table
+    		WHERE element_group = "noodle" or element_group = "bread"
+    	</select>
+    	
+    	<select id="getAddElement4" resultType="org.phg.model.AddElementDTO">
+    		SELECT * FROM mealkit.add_element_table
+    		WHERE element_group = "source" or element_group = "spice"
+    	</select>
+    	
+    	<select id="GetBaseMenu" resultType="org.phg.model.BaseMenuDTO">
+    		SELECT * FROM mealkit.base_menu_table
+    		WHERE base_group = #{base_group}
+    	</select>
+    	
+    	<insert id="SaveCartMain">
+    		<selectKey keyProperty="cart_no" resultType="int" order="BEFORE">
+    			SELECT max(cart_no)+1 FROM mealkit.cart_main_table
+    		</selectKey>
+    		INSERT INTO mealkit.cart_main_table(cart_no, member_id, base_no, base_name, base_price)
+    		VALUES(#{cart_no}, #{member_id}, #{base_no}, #{base_name}, #{base_price})
+    	</insert>
+    	
+    	<insert id="SaveCartSub">
+    		INSERT INTO mealkit.cart_sub_table(cart_no, element_no, element_name, element_price, element_quantity)
+    		VALUES(#{cart_no}, #{element_no}, #{element_name}, #{element_price}, #{element_quantity})
+    	</insert>
+    	
+    </mapper>

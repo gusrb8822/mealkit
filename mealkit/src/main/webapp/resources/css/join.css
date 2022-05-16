@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* #wrap */
+#wrap{
+    overflow: hidden;
+    min-width: 1240px;
+}
+
+/* #container */
+#container{
+    padding-top: 100px;
+    min-height: 500px;
+}
+.container_in{
+    width: 600px;
+    margin: 0 auto;
+}
+#container h2{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+#container ul{
+    list-style: none;
+}
+#container ul li{
+    margin-bottom: 10px;
+}
+#container label span{
+    display: inline-block;
+    width: 130px;
+    font-size: 15px;
+}
+#container .guide_message{
+	display: none;
+	margin-top: 5px;
+	margin-left: 135px;
+	font-size: 12px;
+	color: red;
+	line-height: 1em;
+}
+#container fieldset{
+    border: 0;
+}
+.info input{
+    width: 300px;
+    height: 30px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.commercial label:nth-child(2){
+    margin-right: 70px;
+}
+.btns{
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.btns button{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #888;
+    border-radius: 10px;
+}
+.btns button:hover{
+    background-color: #ccc;
+}
+.go_login{
+    width: 300px;
+}
+.go_login a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+

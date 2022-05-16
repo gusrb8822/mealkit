@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="org.phg.dao.CartDAO">
+    	<select id="getOrderMain" resultType="org.phg.model.CartMainDTO">
+    		SELECT * FROM mealkit.cart_main_table
+    		WHERE member_id = #{member_id}
+    	</select>
+    	
+    	<select id="getOrderSub" resultType="org.phg.model.CartSubDTO">
+			SELECT * FROM mealkit.cart_sub_table
+			WHERE cart_no = #{cart_no}
+    	</select>
+    	
+    	<insert id="orderProduct">
+    		<selectKey keyProperty="order_no" resultType="int" order="BEFORE">
+    			SELECT max(order_no)+1 FROM mealkit.order_product_table
+    		</selectKey>
+    		INSERT INTO mealkit.order_product_table(order_no, member_id, base_name, add_element, total_price)
+    		VALUES(#{order_no}, #{member_id}, #{base_name}, #{add_element}, #{total_price})
+    	</insert>
+    	
+    	<insert id="orderProduct2">
+    		INSERT INTO mealkit.order_product_table(order_no, member_id, base_name, add_element, total_price)
+    		VALUES(#{order_no}, #{member_id}, #{base_name}, #{add_element}, #{total_price})
+    	</insert>
+		
+		<delete id="deleteCartMain">
+			DELETE FROM mealkit.cart_main_table
+			WHERE cart_no = #{cart_no}
+		</delete>
+		
+		<delete id="deleteCartSub">
+			DELETE FROM mealkit.cart_sub_table
+			WHERE cart_no = #{cart_no}
+		</delete>
+		
+		<select id="getCartNo" resultType="Integer">
+			SELECT cart_no FROM mealkit.cart_main_table
+			WHERE member_id = #{member_id}
+		</select>
+		
+    </mapper>

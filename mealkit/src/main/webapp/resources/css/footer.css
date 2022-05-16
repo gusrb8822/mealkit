@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* #wrap */
+#wrap{
+    overflow: hidden;
+    min-width: 1240px;
+}
+/* #footer */
+#footer{
+    border-top: 2px solid #222;
+}
+.footer_in{
+    width: 1200px;
+    margin: 0 auto;
+}
+.footer_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0 20px;
+}
+.f_logo{
+    width: 200px;
+    height: 80px;
+    text-indent: -99999px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px auto;
+    background-image: url(../img/f_logo_250_100.png);
+}
+.fc1{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.fc2{
+    font-size: 25px;
+    line-height: 1em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.cs_time{
+    color: #888;
+    font-size: 14px;
+    line-height: 1.6em;
+}
+.cs_time p span{
+    display: inline-block;
+    width: 60px;
+    font-weight: 700;
+}
+.fi1{
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.fi2{
+    color: #888;
+    font-size: 14px;
+    line-height: 1.6em;
+}
+.fi2 a{
+    display: inline-block;
+    margin: 0 3px;
+    color: #888;
+}
+.fi2 .bar{
+    display: inline-block;
+    vertical-align: top;
+    background-color: #888;
+    width: 1px;
+    height: 10px;
+    margin-top: 7px;
+    margin: 7px 3px 0;
+}
+.footer_bottom{
+    padding: 20px 0;
+}
+.footer_bottom ul{
+    display: flex;
+}
+.footer_bottom ul li{
+    margin-right: 40px;
+}
+.footer_bottom ul li a{
+    color: #222;
+    font-size: 14px;
+}
+.footer_bottom ul li a:hover{
+    text-decoration: underline;
+}
+.footer_bottom ul .point a{
+    font-weight: 500;
+}

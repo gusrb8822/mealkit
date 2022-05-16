@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+/* 주문정보에 항목이 없을 경우 뜨는 화면 */
+.no_order{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 600px;
+	line-height: 2.5em;
+}
+.no_order p{
+	font-size: 20px;
+	color: #666;
+}
+.no_order a{
+	display: block;
+	width: 150px;
+	height: 40px;
+	border: 1px solid #666;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #666;
+	text-align: center;
+	line-height: 40px;
+}
+/* 주문정보에 항목이 없을 경우 뜨는 화면 끝*/
+
+
+
+/* .review_detail */
+.container_in{
+	width: 1200px;
+	margin: 0 auto;
+}
+.review_detail_box{
+	position: relative;
+	height: 800px;
+	padding: 40px;
+}
+.review_detail_box ul{
+	width: 1120px;
+	height: 720px;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+}
+.review_detail_box li{
+	padding: 10px;
+	font-size: 16px;
+	border-bottom: 1px solid #ccc;
+}
+.review_detail_box li:last-child{
+	border-bottom: 0;
+}
+.detail_point_menu{
+	display: flex;
+	justify-content: space-between;
+}
+.detail_point{
+	width: 180px;
+	height: 30px;
+	text-indent: -99999px;
+	background-image: url(../img/review_point_background.png);
+	background-size: auto 30px;
+	background-repeat: no-repeat;
+}
+.check_point{
+	display: flex;
+	width: 180px;
+	height: 30px;
+}
+.check_point .point{
+	display: block;
+	width: 36px;
+	height: 30px;
+	text-indent: -99999px;
+	background-image: url(../img/review_point_5.png);
+	background-size: auto 30px;
+	background-repeat: no-repeat;
+}
+.check_point .point:nth-child(1){background-position: 0 30px;}
+.check_point .point:nth-child(2){background-position: -36px 30px;}
+.check_point .point:nth-child(3){background-position: -72px 30px;}
+.check_point .point:nth-child(4){background-position: -108px 30px;}
+.check_point .point:nth-child(5){background-position: -144px 30px;}
+
+.show_upload_file{
+	display: flex;
+	margin-top: 10px;
+}
+.show_upload_file p{
+	width: 200px;
+	height : 150px;
+	margin-right: 10px;
+}
+.show_upload_file p img{
+	height: 100%;
+	object-fit: cover;
+}
+.review_btns{
+	position: absolute;
+	bottom: 60px;
+	right: 40px;
+	display: flex;
+}
+.review_btns input{
+	display: block;
+	padding: 10px;
+	background-color: #eee;
+	font-size: 15px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+}
+.write_btn{
+	margin-right: 10px;
+}

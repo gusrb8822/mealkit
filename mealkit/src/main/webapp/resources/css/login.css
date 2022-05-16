@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* #wrap */
+#wrap{
+    overflow: hidden;
+    min-width: 1240px;
+}
+
+/* #container */
+#container{
+    padding-top: 100px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+}
+#container h2{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+#container ul{
+    list-style: none;
+}
+#container ul li{
+    margin-bottom: 10px;
+}
+#container ul li input{
+    width: 238px;
+}
+#container label span{
+    display: inline-block;
+    width: 100px;
+}
+.container_in input{
+    width: 250px;
+    height: 30px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.go_join{
+    width: 300px;
+    padding-top: 10px;
+}
+.go_login a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,254 @@
+@charset "UTF-8";
+/* #container */
+#container{
+	padding: 30px;
+}
+.container_in{
+	width: 1200px;
+	margin: 0 auto;
+}
+.title{
+	font-size: 25px;
+	line-height: 1.5em;
+}
+.title_sub{
+	font-size: 18px;
+	color: #aaa;
+	margin-bottom: 15px;
+}
+.title_sub_view{
+	display: flex;
+	justify-content: space-between;
+}
+.review_list{
+	border-top: 3px solid #ccc;
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 50px;
+}
+.review_box{
+	width: 270px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-sizing: border-box;
+	margin-right: 40px;
+	margin-bottom: 30px;
+}
+.review_box:hover{
+	background-color: #f4f4f4;
+	cursor: pointer;
+}
+.review_box:nth-child(4n){
+	margin-right: 0;
+}
+.point{
+	position: relative;
+	width: 108px;
+	height: 18px;
+	text-indent: -99999px;
+	background-image: url(../img/review_point_background.png);
+	background-size: auto 18px;
+	background-repeat: no-repeat;
+}
+.point_checked{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 108px;
+	height: 18px;
+	background-size: auto 18px;
+	background-repeat: no-repeat;
+
+}
+.point_checked[data-value="1"]{background-image: url(../img/review_point_1.png);}
+.point_checked[data-value="2"]{background-image: url(../img/review_point_2.png);}
+.point_checked[data-value="3"]{background-image: url(../img/review_point_3.png);}
+.point_checked[data-value="4"]{background-image: url(../img/review_point_4.png);}
+.point_checked[data-value="5"]{background-image: url(../img/review_point_5.png);}
+
+.order_menu{
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.review_imgs{
+	width: 228px;
+	height: 171px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.review_imgs .review_img{
+	display: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.review_imgs .review_img:first-child{
+	display: block;
+}
+
+
+.order_menu_list{
+	display: none;
+}
+.review_content{
+	display: none;
+}
+.pager{
+	text-align: center;
+}
+.pager a{
+	font-size: 15px;
+	color : #666;
+}
+
+.review_write_btn{
+	color: #666;
+	font-size: 15px;
+}
+
+/* .review_detail */
+.review_detail{
+	display: none;
+	position :fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+}
+.review_detail_box{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1200px;
+	height: 800px;
+	background-color: #fff;
+	margin-left: -600px;
+	margin-top: -400px;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+}
+.review_detail_box ul{
+	position: absolute;
+	top: 40px;
+	left: 40px;
+	width: 1120px;
+	height: 720px;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+}
+.review_detail_box li{
+	padding: 10px;
+	font-size: 16px;
+	border-bottom: 1px solid #ccc;
+}
+.review_detail_box li:last-child{
+	border-bottom: 0;
+}
+.detail_point_date{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 50px;
+	line-height: 30px;
+}
+.detail_point{
+	position: relative;
+	width: 180px;
+	height: 30px;
+	text-indent: -99999px;
+	background-image: url(../img/review_point_background.png);
+	background-size: auto 30px;
+	background-repeat: no-repeat;
+}
+.detail_point .point_checked{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 180px;
+	height: 30px;
+	background-size: auto 30px;
+	background-repeat: no-repeat;
+}
+.detail_order{
+	background-color: #fff;
+	position: absolute;
+	top: 92px;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 45px;
+	box-sizing: border-box;
+	overflow-y: hidden;
+}
+.detail_order div{
+	width: 45%;
+	margin-bottom: 20px;
+}
+.detail_order div pre{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+.detail_content p{
+	height: 370px;
+}
+.detail_imgs{
+	display: flex;
+	height: 200px;
+}
+.detail_imgs .review_img{
+	width: 252px;
+	height: 188px;
+	margin-right: 10px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.detail_imgs .review_img img{
+	height: 100%;
+	object-fit: cover;
+}
+.detail_imgs .no_img{
+	display: none;
+}
+.close_detail_btn{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.close_detail_btn a{
+	display: block;
+	width: 30px;
+	height: 30px;
+	text-indent: -99999px;
+	background-image: url(../img/delete_100_100.png);
+	background-size: 30px auto;
+	background-repeat: no-repeat;
+}
+
+
+.detail_background{
+	background-color: rgba(255, 255, 255, 0.7);
+	width: 100%;
+	height: 100%;
+}
+.img_background{
+	position: fixed;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 100vw;
+	height: 100vh;
+}
+.size_up_img{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.size_up_img img{
+	width: auto;
+	height: auto;
+}

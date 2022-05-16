@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* #container */
+pre{
+	white-space: pre-wrap;
+}
+#container{
+	padding: 30px;
+}
+.container_in{
+	width: 1200px;
+	margin: 0 auto;
+}
+.title{
+	font-size: 25px;
+	line-height: 1.5em;
+}
+.title_sub{
+	font-size: 18px;
+	color: #aaa;
+	margin-bottom: 15px;
+}
+.title_sub_view{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 3px solid #ccc;
+}
+.cs_list{
+	padding: 20px;
+}
+.cs_list li{
+	border-bottom: 1px solid #bbb;
+	min-height: 40px;
+	display: flex;
+	align-items: center; 
+	font-size: 15px;
+}
+.cs_list li p{
+	min-width: 80px; 
+	margin-right: 10px;
+}
+.cs_list .content{
+	width: 930px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+.cs_list .answer .content{
+	padding : 20px 0;
+}
+.list_section{
+	border-top: 1px solid #bbb;
+	text-align: center;
+	background-color: #f4f4f4;
+}
+.question{
+	cursor: pointer;
+}
+.qna_point{
+	width: 20px;
+	margin-right: 10px;
+	font-size: 18px;
+}
+.list_section p:list-child{
+	margin-right: 0;
+}
+.cs_list .answer{
+	display: none;
+	background-color: #fafafa;
+}
+.question p:first-child, .question p:nth-child(2){
+	text-align: center;
+}
+
+
+
+
+
+
+
+.pager{
+	text-align: center;
+}
+.pager a{
+	font-size: 15px;
+	color : #666;
+}

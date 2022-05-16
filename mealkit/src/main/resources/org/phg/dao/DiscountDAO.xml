@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="org.phg.dao.DiscountDAO">
+    	<select id="getTotalMain" resultType="org.phg.model.CartMainDTO">
+	   		<![CDATA[
+			SELECT * FROM
+				(SELECT @rownum:=@rownum+1 AS rownum, b.*
+				FROM (SELECT @rownum:=0) AS tmp, 
+				mealkit.discount_main_table b ORDER BY cart_no desc)
+			AS view_discount 
+			WHERE rownum > (#{pageNum}-1) * #{amount} 
+			&& rownum <= #{pageNum} * #{amount}
+			]]>
+    	</select>
+    	<select id="getSub" resultType="org.phg.model.CartSubDTO">
+    		SELECT * FROM mealkit.discount_sub_table
+    		WHERE cart_no = #{cart_no}
+    	</select>
+    	<select id="getMainCount" resultType="int">
+    		SELECT COUNT(*) FROM mealkit.discount_main_table
+    	</select>
+    	
+    	<select id="getCartNo" resultType="int">
+    		SELECT max(cart_no)+1 FROM mealkit.cart_main_table
+    	</select>
+    	<insert id="buyDiscountMain">
+    	INSERT INTO mealkit.cart_main_table(cart_no, member_id, base_no, base_name, base_price)
+		VALUES(
+				#{cno}, #{member_id}, 
+				(SELECT base_no FROM mealkit.discount_main_table WHERE cart_no = #{cart_no}),
+				#{base_name},
+				(SELECT base_price FROM mealkit.discount_main_table WHERE cart_no = #{cart_no})
+		)
+    	</insert>
+    	<insert id="buyDiscountSub">
+    		INSERT INTO cart_sub_table
+    		VALUES(#{cart_no}, #{element_no}, #{element_name}, #{element_price}, #{element_quantity})
+    	</insert>
+    </mapper>

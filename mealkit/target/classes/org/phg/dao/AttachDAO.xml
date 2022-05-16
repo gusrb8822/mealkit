@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="org.phg.dao.AttachDAO">
+    	<insert id="AttachWrite">
+			INSERT INTO mealkit.attach_file_table(fileName, uploadPath, uuid, image, review_no)
+    		VALUES(#{fileName}, #{uploadPath}, #{uuid}, #{image}, #{review_no})
+    	</insert>
+    	
+    	<select id="getAttach" resultType="org.phg.model.AttachFileDTO">
+    		SELECT fileName, REPLACE(uploadPath,'\\','/') AS uploadPath, uuid 
+    		FROM mealkit.attach_file_table
+			WHERE review_no = #{review_no};
+    	</select>
+
+    </mapper>

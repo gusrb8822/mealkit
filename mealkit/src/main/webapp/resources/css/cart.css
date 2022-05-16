@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+#container{
+	padding: 30px 0 0;
+}
+.container_in{
+	width: 1240px;
+	margin: 0 auto;
+}
+/* 장바구니에 항목이 없을 경우 뜨는 화면 */
+.no_cart{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 600px;
+	line-height: 2.5em;
+}
+.no_cart p{
+	font-size: 20px;
+	color: #666;
+}
+.no_cart a{
+	display: block;
+	width: 150px;
+	height: 40px;
+	border: 1px solid #666;
+	border-radius: 5px;
+	font-size: 20px;
+	color: #666;
+	text-align: center;
+	line-height: 40px;
+}
+/* 장바구니에 항목이 없을 경우 뜨는 화면 끝*/
+
+
+
+/* 장바구니 있을 때 화면*/
+.have_cart{
+	background-color: #f4f4f4;
+}
+.list_section{
+	margin-bottom: 30px;
+}
+h2{
+	margin-bottom: 20px;
+}
+.order_div{
+	position: relative;
+	padding: 40px 70px;
+	background-color: #fff;
+	border-radius: 20px;
+	margin-bottom: 30px;
+}
+.order_div:last-child{
+	margin-bottom: 0;
+}
+.delete_btn{
+	position: absolute;
+	top: 10px;
+	right: 15px;
+}
+.delete_btn a{
+	display: block;
+	width: 30px;
+	height: 30px;
+	text-indent: -99999px;
+	background-image: url(../img/delete_100_100.png);
+	background-size: 30px auto;
+	
+	
+}
+.order_list{
+	display: flex;
+	width: 100%;
+	padding: 0 30px;
+	box-sizing: border-box;
+	border-top: 2px solid #222;
+	border-bottom: 1px solid #666;
+}
+.order_list li{
+	padding: 10px 20px 20px;
+}
+.base_menu{
+	width: 45%;
+}
+.categori{
+	margin-bottom: 10px;
+}
+.base_info{
+	display: flex;
+}
+.base_image{
+	width: 170px;
+	height: 170px;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-right: 20px;
+}
+.base_image img{
+	display: block;
+}
+.base_text{
+	width: 220px;
+}
+.base_name{
+	height: auto;
+	font-size: 18px;
+	font-weight: 500;
+	font-family: 'Noto Sans KR', sans-serif;
+	border: 0;
+}
+.base_price{
+	font-size: 16px;
+}
+.add_element{
+	width: 40%;
+	height: 230px;
+	box-sizing: border-box;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	overflow-y: scroll;
+}
+.total_price{
+	position: relative;
+	width: 15%;
+}
+.total_price .price{
+	font-size: 16px;
+}
+.order_btn{
+	position: absolute;
+	top: 170px;
+	left: 50%;
+	width: 150px;
+	height: 40px;
+	margin-left: -75px;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 700;
+	background-color: rgb(241, 151, 66);
+	border: 0;
+	border-radius: 5px;
+}
+.order_btn:hover{
+	background-color: rgb(245, 175, 109);
+}
+
+.total_order_section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #fff;
+	padding: 40px 0;
+}
+.price_part{
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.total_order_btn{
+	width: 300px;
+	height: 40px;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 700;
+	background-color: rgb(241, 151, 66);
+	border: 0;
+	border-radius: 5px;
+}
+.total_order_btn:hover{
+	background-color: rgb(245, 175, 109);
+}
+
+
+
+
+/* 장바구니 있을 때 화면 끝 */
+

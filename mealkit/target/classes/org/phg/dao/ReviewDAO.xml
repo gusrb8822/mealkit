@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="org.phg.dao.ReviewDAO">
+		<select id="getReview" resultType="org.phg.model.ReviewDTO">
+		<![CDATA[
+			SELECT * FROM
+				(SELECT @rownum:=@rownum+1 AS rownum, b.*
+				FROM (SELECT @rownum:=0) AS tmp, 
+				mealkit.review_table b ORDER BY review_no desc)
+			AS view_review 
+			WHERE rownum > (#{pageNum}-1) * #{amount} 
+			&& rownum <= #{pageNum} * #{amount}
+		]]>
+		</select>
+		
+		<select id="getOrder" resultType="org.phg.model.OrderProductDTO">
+			SELECT * FROM mealkit.order_product_table
+			WHERE order_no = #{order_no}
+		</select>
+		
+		<select id="getCount" resultType="int">
+			SELECT COUNT(*) FROM mealkit.review_table
+		</select>
+		
+		<select id="getOrderData" resultType="org.phg.model.OrderProductDTO">
+			SELECT * FROM mealkit.order_product_table
+			WHERE member_id = #{member_id}
+		</select>
+		
+		<insert id="writeReview">
+			<selectKey keyProperty="review_no" resultType="int" order="BEFORE">
+    			SELECT max(review_no)+1 FROM mealkit.review_table
+    		</selectKey>
+			INSERT INTO mealkit.review_table(review_no, writer_id, writer_name, order_no, review_point, review_content)
+			VALUES(#{review_no}, #{writer_id}, #{writer_name}, #{order_no}, #{review_point}, #{review_content})
+		</insert>
+    </mapper>

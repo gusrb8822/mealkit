@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="org.phg.dao.MemberDAO">
+    	<insert id="Join">
+    		INSERT INTO mealkit.member_table(name, id, pw, email, commercial)
+    		VALUES(#{name}, #{id}, #{pw}, #{email}, #{commercial})
+    	</insert>
+    	<select id="CheckId" resultType="org.phg.model.MemberDTO">
+    		SELECT * FROM mealkit.member_table
+    		WHERE id=#{id}
+    	</select>
+    	<select id="Login" resultType="org.phg.model.MemberDTO">
+    		SELECT * FROM mealkit.member_table
+    		WHERE id=#{id} AND pw=#{pw}
+    	</select>
+    	<update id="MemberChange">
+    		UPDATE mealkit.member_table
+    		SET pw=#{pw}, email=#{email}, commercial=#{commercial}
+    		WHERE id=#{id}
+    	</update>
+    	<delete id="MemberDelete">
+			DELETE FROM mealkit.member_table
+			WHERE id=#{id}
+    	</delete>
+    </mapper>
