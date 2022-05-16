@@ -67,7 +67,7 @@
 			        							var uploadPath = "<c:out value='${reviewPage.reviews[i].attach[j].uploadPath}'/>";
 			        							var uuid ="<c:out value='${reviewPage.reviews[i].attach[j].uuid}'/>";
 			        							var fileName ="<c:out value='${reviewPage.reviews[i].attach[j].fileName}'/>";
-			        							$(".review_box").eq(review_index).find(".review_img").eq(img_index).find("img").attr("src","display?fileName="+uploadPath+"/"+uuid+"_"+fileName);
+			        							$(".review_box").eq(review_index).find(".review_img").eq(img_index).find("img").attr("src","../resources/img/"+uploadPath+"/"+uuid+"_"+fileName);
 			        						</script>
 		        						</c:forEach>
 		        					</c:if><!-- 이미지가 있을 경우 끝-->
